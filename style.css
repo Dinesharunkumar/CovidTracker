@@ -1,0 +1,582 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif !important;
+    /* display: flex;
+    position: absolute;
+    min-height: 100%;
+    height: auto;
+    width: 100%; */
+}
+
+header{
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.lightmode-header{
+    /* background-color: #00303F; */
+    background-color: #00796b;
+    color: rgb(255, 255, 255);
+}
+
+.darkmode-header{
+    background-color: #003f50;
+    color: white;
+    
+}
+
+ul#myTab {
+    position: absolute;
+    right: 142px;
+    font-size: 25px;
+    padding-top: 21px;
+}
+
+ul#myTab li a {
+    color: white;
+}
+
+header h4{
+    font-size: 40px;
+    font-weight: 700 !important;
+    padding: 20px;
+}
+
+.select-btn-light{
+    background-color: white !important;
+}
+
+.select-btn-dark{
+    background-color: #003f50 !important;
+}
+
+.drop-button-light {
+    background-color:  #00796b !important;
+    color: white;
+    font-size: 20px;
+}
+
+.drop-button-dark {
+    background-color:  #00242e !important;
+    color: white;
+    font-size: 20px;
+}
+
+.country-flag{
+    display: flex;
+    /* justify-content: space-evenly;    */
+}
+
+button.btn.btn-primary {
+    width: 250px;
+    /* float: right; */
+    right: 10px !important;
+    position: absolute;
+    margin-top: 6px;
+}
+
+.dropdown1{
+    position: absolute !important;
+    width: 400px;
+    right: 10px;
+    padding-top: 6px;
+    display: flex;
+}
+
+.dropdown2{
+    position: absolute !important;
+    width: 350px;
+    right: 20px;
+    padding-top: 6px;
+    display: flex;
+}
+
+.dropdown-menu{
+    width: 100%;
+}
+
+.dropdown-menu.show {
+    max-height: 600px;
+    overflow: scroll;
+    cursor: pointer;
+}
+
+.btn{
+    width: 100%;
+}
+
+.icon {
+    position: absolute;
+    right: 0;
+    padding: 35px;
+    padding-right: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.icon a{
+    text-decoration: none;
+    color: white;
+}
+
+.icon a:hover, a:focus, a:active{
+    text-decoration: none;
+    color: inherit;
+}
+
+section{
+    position: absolute;
+    top: 100px;
+    bottom: 60px;
+    width: 100%;
+    overflow: auto;
+}
+
+.lightmode-section{
+    background-color: #ffffff;
+}
+
+.darkmode-section{
+    background-color: #00242e;
+}
+
+.card {
+    margin: 15px;
+}
+.card-align{
+    display: flex;
+}
+
+.card-body {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-body h5{
+    /* text-align: center; */
+    font-weight: 700;
+}
+
+.card-body p{
+    text-align: center;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+
+.country-name-light{
+    font-weight: 700; 
+    text-transform: uppercase; 
+    color: #00796b;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.country-name-dark{
+    font-weight: 700; 
+    text-transform: uppercase; 
+    color: white;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.card-body.text-primary {
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.card-lightmode-red{
+    color: red;
+    background-color: rgb(255, 218, 218) !important;
+    /* background-color: white !important; */
+    margin-bottom: 10px !important
+}
+
+.hr-lightmode-red{
+    background-color: red;
+}
+
+.card-darkmode-red{
+    color: white;
+    background-color: #003f50 !important;
+    margin-bottom: 10px !important
+}
+
+.hr-darkmode-red{
+    background-color: white;
+}
+
+
+.card-lightmode-blue{
+    color: rgb(27, 27, 231);
+    background-color:  rgb(224, 227, 252) !important;
+    margin-bottom: 10px !important
+}
+
+.hr-lightmode-blue{
+    background-color: blue;
+}
+
+.card-darkmode-blue{
+    color: white;
+    background-color: #003f50 !important;
+    margin-bottom: 10px !important
+}
+
+.hr-darkmode-blue{
+    background-color: white;
+}
+
+.card-lightmode-green{
+    color: green;
+    background-color:  rgb(206, 255, 206) !important;
+    margin-bottom: 10px !important
+}
+
+.hr-lightmode-green{
+    background-color: green;
+}
+
+.card-darkmode-green{
+    color:white;
+    background-color: #003f50 !important;
+    margin-bottom: 10px !important
+}
+
+.hr-darkmode-green{
+    background-color: white;
+}
+
+.card-lightmode-black{
+    color: black;
+    background-color:  rgb(221, 221, 221) !important;
+    margin-bottom: 10px !important
+}
+.hr-lightmode-black{
+    background-color: black;
+}
+
+.card-darkmode-black{
+    color: white;
+    background-color: #003f50 !important;
+    margin-bottom: 10px !important
+}
+
+.hr-darkmode-black{
+    background-color: white;
+}
+
+.table-chart{
+    display: flex;
+    margin-top: 30px;
+    margin: 10px;
+}
+
+.dropdown-state {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    display: none;
+}
+
+.card-table-align{
+    width: 50% !important;
+    
+
+}
+
+.table-align {
+    height: 350px;
+    overflow-y: scroll;
+
+}
+
+
+.table th{
+    position: sticky !important;
+    background-color: white;
+    color: black;
+    top: 0;
+}
+
+
+
+.table-row-light{
+    color: black;
+}
+
+.table-row-dark{
+    color: white;
+}
+
+.card-chart-align{
+    width: 50% !important;
+}
+
+.states-lightmode-card{
+    background-color: white !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 450px;
+}
+
+.states-darkmode-card{
+    background-color: #003f50 !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 450px;
+    color: white !important;
+}
+
+.select-state-light{
+    display: flex;
+    color: black !important;
+}   
+
+.select-state-dark{
+    display: flex;
+    color: white !important;
+}
+
+.chart-lightmode-card{
+    background-color:  white !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 450px;
+}
+
+.chart-darkmode-card{
+    background-color:   #003f50 !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 450px;
+    color: white !important;
+}
+
+.custom-light thead th{
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    
+  }
+
+.custom-light tbody tr {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    /* text-align: center; */
+  }
+
+.custom-dark thead th {
+    background-color:  #003f50 !important;
+    color: white;
+    
+  } 
+
+.custom-dark tbody tr {
+    background-color:  #003f50 !important;
+    color: white;
+    /* text-align: center; */
+  }
+
+.dataTables_filter{
+    float: right !important ;
+}
+
+#chartdiv {
+  width: auto !important;
+  height: 350px;
+  overflow-x: scroll;
+}
+
+
+
+footer{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0 ;
+    text-align: center;
+    padding-top: 18px;
+    overflow: hidden;   
+}
+
+.lightmode-footer{
+    background-color: #00796b;
+    color: white;    
+}
+
+.darkmode-footer{
+    background-color: #003f50;
+    color: white;
+}
+
+.lightmode-footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.darkmode-footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer  a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    
+    .body{
+        height: auto !important;    
+    }
+    
+    .table-chart {
+      display: block;
+      position: relative;
+      margin-right: 20px;
+    }
+    header h4{
+        font-size: 30px;
+        padding-top: 30px;
+    }
+
+    .dropdown-menu.show {
+        margin: 0 !important;
+    }
+    .card-table-align{
+        width: 100% !important;
+    }
+    
+    .card-chart-align{
+        width: 100% !important;
+        margin-top: 5px !important;
+    }
+
+
+   
+    
+  }
+
+  @media screen and (max-width: 1100px) {
+    h3#countryname-v {
+        display: none;
+    }
+    .deck1{
+        display: none !important;
+    }
+
+  }
+
+  @media screen and (max-width: 1000px) {
+    .card-deck {
+    flex-direction: column !important;
+    }
+    .card-body p{
+        font-size: 35px;
+    }
+
+  }
+
+  @media screen and (max-width: 800px) {
+
+    header h4{
+        font-size: 25px;
+        padding-top: 35px;
+    }
+
+    ul#myTab {
+        position: absolute;
+        right: 87px;
+        font-size: 15px;
+        padding-top: 30px;
+    }
+
+    h3#countryname-v {
+        display: none;
+    }
+
+  
+    .dropdown2 {
+        position: inherit !important;
+        width: 100%;
+        right: 20px;
+        display: flex;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-left: 10px   ;
+    }
+
+  }
+
+  @media screen and (max-width: 700px) {
+
+    h3#countryname {
+        display: none;
+    }
+
+  
+    .dropdown1 {
+        position: inherit !important;
+        width: 100%;
+        right: 20px;
+        display: flex;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-left: 10px   ;
+    }
+
+  }
+
+  @media screen and (max-width: 550px){
+
+    header h4{
+        font-size: 25px;
+        padding-top: 20px;
+    }
+
+    img#myImg {
+        display: none;
+    }
+
+    img#myImg-v {
+        display: none;
+    }
+
+    ul#myTab {
+        position: absolute;
+        right: 87px;
+        font-size: 15px;
+        padding-top: 59px;
+        align-items: center;
+        left: 20px !important;
+        }
+
+    .icon {
+        position: absolute;
+        right: 0;
+        padding-top: 67px;
+        padding-right: 21px;
+        font-size: 20px;
+        cursor: pointer;
+        text-decoration: none;
+        /* left: 0!important;   */
+    }
+
+    .dropdown1{
+        margin-left: 0;
+    }
+
+    .dropdown2{
+        margin-left: 0;
+    }
+
+    footer{
+        font-size: 12px;
+    }
+}

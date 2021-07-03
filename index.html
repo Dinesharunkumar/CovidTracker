@@ -1,0 +1,186 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500&di    splay=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css"> -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <script src="http://www.amcharts.com/lib/3/themes/dark.js"></script>
+    <title>COVID TRACKER</title>
+</head>
+<body> 
+    <header class="lightmode-header" id="head">
+        <div style="display: flex;">
+          <h4>COVID-TRACKER</h4>
+            <ul class="nav" id="myTab" role="tablist">
+                <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;&nbsp;INDIA</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;WORLD</a>
+                </li>
+            </ul>
+            <div class="icon" style="display: flex;" >
+                <i class="fa fa-sun-o" aria-hidden="true" onclick="changeTheme()" id="theme"></i>
+            </div>
+        </div>
+    </header>
+    <section class="lightmode-section" id="sec">
+
+    
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card select-btn-light" id="select-v">
+                <div class="card-body country-flag">
+                  <img id="myImg" src="" width="80" height="50">
+                  <h3 id="countryname" class="country-name-light" >Country Name </h3>
+                  <div class="dropdown1">
+                    <select id="state" onchange="onState(this)" class="btn btn-secondary dropdown-toggle drop-button-light">
+                      <!-- <option value="" style="margin-top: 5px !important;" >Select the state</option> -->
+                    </select>
+                  </div>
+                  <!-- <button type="button" class="btn btn-primary" style="right: 400px !important;"><i class="fa fa-globe" aria-hidden="true" style="margin-right: 10px; font-size: 20px;"></i>INDIA</button>
+                    <button type="button" class="btn btn-primary"><i class="fa fa-globe" aria-hidden="true" style="margin-right: 10px; font-size: 20px;"></i>Rest of the world</button> -->
+                </div>
+            </div>
+            <div class="card-deck deck1" style="margin: 1px;">
+                <div class="card card-lightmode-red" id="red-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Confirmed</h5>
+                    <hr class="hr-red" id="hrr">
+                    <p class="card-text" id="cases">1234567</p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                  </div>
+                </div>
+                <div class="card card-lightmode-blue" id="blue-card">
+                  <div class="card-body">
+                    <h5 class="card-title" >Active</h5>
+                    <hr class="hr-blue" id="hrb">
+                    <p class="card-text" id="active">1234567</p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                  </div>
+                </div>
+                <div class="card  card-lightmode-green" id="green-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Recovered</h5>
+                    <hr class="hr-green" id="hrg">
+                    <p class="card-text" id="recover">1234567</p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                  </div>
+                </div>
+                <div class="card card-lightmode-black" id="black-card">
+                    <div class="card-body">
+                      <h5 class="card-title">Deaths</h5>
+                      <hr class="hr-black" id="hrbk">
+                      <p class="card-text" id="death">1234567</p>
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="table-chart">
+              <div class="card-body states-lightmode-card card-table-align" id="state-card">
+                <div class="select-state-light" id="states-name" >
+                  <h5>STATE :&nbsp;<span id="statename" style="text-transform: uppercase; "></span></h5>
+                </div>
+      
+                <div class="table-align" id="tabledata">
+                  <table class="table custom-light" id="table_id" >
+                    <!-- <thead class="light-mode" id="table_head" >
+                      <tr>
+                          <th scope="col" class="sorting_asc">District</th>
+                          <th scope="col" class="sorting">Confirmed</th>
+                          <th scope="col" class="sorting">Active</th>
+                          <th scope="col" class="sorting">Recovered</th>
+                          <th scope="col" class="sorting">Deaths</th>
+                      </tr>
+                      </thead> -->  
+                      
+                  </table>
+                </div>
+              </div>
+              <div class="card-body text-primary chart-lightmode-card card-chart-align" id="state-chart">
+                <div class="select-state-light" id="states-name-chart" >
+                  <h5>STATE :&nbsp;<span id="statename-chart" style="text-transform: uppercase; "></span></h5>
+                </div>
+                  <div id="chartdiv"></div>
+              </div>
+            </div>
+      </div>
+
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="card select-btn-light" id="select">
+                    <div class="card-body country-flag">
+                      <img id="myImg-v" src="" width="80" height="50">
+                      <h3 id="countryname-v" class="country-name-light" >Country Name </h3>
+                        <div class="dropdown2">
+                          <select onchange="onCd(this)" class="btn btn-secondary dropdown-toggle drop-button-light" id="dropdownMenuButton">
+                          </select>  
+                        
+                    </div>
+                </div>
+            </div>
+          </div>
+            <div class="card-deck" style="margin: 1px;">
+                <div class="card card-lightmode-red" id="red-card-v">
+                  <div class="card-body">
+                    <h5 class="card-title">Confirmed</h5>
+                    <hr class="hr-red" id="hrr-v">
+                    <p class="card-text" id="cases-v">1234567</p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                  </div>
+                </div>
+                <div class="card card-lightmode-blue" id="blue-card-v">
+                  <div class="card-body">
+                    <h5 class="card-title" >Active</h5>
+                    <hr class="hr-blue" id="hrb-v">
+                    <p class="card-text" id="active-v">1234567</p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                  </div>
+                </div>
+                <div class="card  card-lightmode-green" id="green-card-v">
+                  <div class="card-body">
+                    <h5 class="card-title">Recovered</h5>
+                    <hr class="hr-green" id="hrg-v">
+                    <p class="card-text" id="recover-v">1234567</p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                  </div>
+                </div>
+                <div class="card card-lightmode-black" id="black-card-v">
+                    <div class="card-body">
+                      <h5 class="card-title">Deaths</h5>
+                      <hr class="hr-black" id="hrbk-v">
+                      <p class="card-text" id="death-v">1234567</p>
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                    </div>
+              </div>
+          </div>
+            <div class="table-chart">
+              <div class="card-body text-primary chart-lightmode-card card-chart-align" id="state-chart-v">
+                <div id="chartdiv-v"></div>
+              </div>
+            </div>
+    </div>
+    </section>
+<footer class="lightmode-footer" id="foot">
+    <a href="" target="blank">2021 Copyright</a>
+
+</footer>
+<script src="index.js"></script>
+  
+</body>
+
+</html>
